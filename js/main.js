@@ -6,7 +6,7 @@ jQuery(function($) {
         init: function() {
             const $englishButton = $('#english-convert-button');
             
-            $('#converted-date').html('s')
+            
             $englishButton.on('click',
                 function() {
                     var fromDate = getEnglishDate()
