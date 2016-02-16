@@ -1,40 +1,55 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Nepali Date Converter</title>
-        <meta name="description" content="Another date cnverter. Because there are not enough date converters in Nepal">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nepali Date Converter</title>
+    <meta name="description" content="Another date converter. Because there are not enough date converters in Nepal">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
-            </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/milligram.css">
+
+
+    
+</head>
 
 
 <body>
+    <h1 class="vesak-title">Vesak</h1>
 
-<div class="vesak-title">
-
-Vesak
-
-</div>
+<span class="tagline">"Because the world needs more date converters"</span>
 
 
-<div id="english-conversion-form">
-<select name="year" id="english-date-selector">
+
+
+
+    <div class="container">
+
+
+        <div id="converted-date"> </div>
+
+        <span class="tip">
+            <em>Select Year, Month and the day below and click the convert button</em>
+        </span>
+        <div id="english-conversion-form">
+
+            <label for="english-date-selector">Date</label>
+            <select name="year" id="english-date-selector">
     <option value="1970">1970</option>
     <option value="1971">1971</option>
     <option value="1972">1972</option>
     <option value="1973">1973</option>
     <option value="1993">1993</option>
-    <option value="2016" selected="selected">2016</option>
+    <option value="2016" selected>2016</option>
 
 
 </select>
-<select name="month" id= "english-month-selector">
+            <label for="english-month-selector">Month</label>
+            <select name="month" id="english-month-selector">
     <option value="1"  selected="selected">January</option>
     <option value="2" >February</option>
     <option value="3" >March</option>
@@ -49,8 +64,8 @@ Vesak
     <option value="12" >December</option>
 
 </select>
-
-<select name="day" id= "english-day-selector">
+            <label for="english-day-selector">Day</label>
+            <select name="day" id="english-day-selector">
     <option value="1"  selected="selected">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -70,14 +85,20 @@ Vesak
 </select>
 
 
-<button id="english-convert-button">Convert</button>
-</div>
+            <button id="english-convert-button" class="button-outline">Convert</button>
+
+        </div>
+
+
+    </div>
 </body>
 
-<script type="text/javascript" src="js/jquery-1.12.0.min.js" ></script>
+
+<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" src="js/date.js"></script>
 <script type="text/javascript" src="js/neptoeng.js"></script>
 <script type="text/javascript" src="js/engtonep.js"></script>
 
-<script type="text/javascript" src="js/main.js" ></script>
+<script type="text/javascript" src="js/main.js"></script>
+
 </html>
