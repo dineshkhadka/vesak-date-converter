@@ -8,10 +8,10 @@
     <meta name="description" content="Another date converter. Because there are not enough date converters in Nepal">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
 
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/pure-min.css">
     <link rel="stylesheet" type="text/css" href="css/toast.min.css">
 
 
@@ -19,47 +19,46 @@
 
 
 <body>
-    
 
 
 
- 
-
-<div class="container">
 
 
+    <div class="container">
 
-<h1 class="vesak-title">Vesak.js</h1>
 
-<span class="tagline">"A date converter written in javascript" </span>
 
-<div id="converted-date" class="invisible"> </div>
+        <h1 class="vesak-title">Vesak.js</h1>
 
-<form id="switch-dates">
+        <span class="tagline">"A date converter written in javascript" </span>
 
-    <div class="row switcher-box">
+        <div id="converted-date" class="invisible"> </div>
 
-    <div class="col col--1-of-2">
-    <label for="nepali-switch">To Nepali</label>
-        <input type="radio" name="radio-switch" class="pure-radio" value="nepali" id="nepali-switch" checked="" />
-    </div>
-    <div class="col col--1-of-2">
+        <form id="switch-dates">
 
-    <label for="english-switch">To English</label>
-        <input type="radio" name="radio-switch" class="pure-radio" value="english" id="english-switch" />
-    </div>
+            <div class="row switcher-box">
 
-    </div>
-</form>
+                <div class="col col--1-of-2">
+                    <label for="nepali-switch">To Nepali</label>
+                    <input type="radio" name="radio-switch" class="pure-radio" value="nepali" id="nepali-switch" checked="" />
+                </div>
+                <div class="col col--1-of-2">
+
+                    <label for="english-switch">To English</label>
+                    <input type="radio" name="radio-switch" class="pure-radio" value="english" id="english-switch" />
+                </div>
+
+            </div>
+        </form>
 
 
         <form id="english-conversion-form" class="pure-form pure-form-aligned hidden ">
-        <fieldset>
-        <legend>Select the dates from the form below</legend>
-       <div class="row">
-      <div class="col col--1-of-3">
-                    <label for="english-date-selector">Date</label>
-                    <select name="year" class="form-control" id="english-date-selector">
+            <fieldset>
+                <legend>Select the dates from the form below</legend>
+                <div class="row">
+                    <div class="col col--1-of-3">
+                        <label for="english-date-selector">Date</label>
+                        <select name="year" class="form-control" id="english-date-selector">
     <option value="1970">1970</option>
     <option value="1971">1971</option>
     <option value="1972">1972</option>
@@ -71,11 +70,11 @@
 </select>
 
 
-          </div>
-          <div class="col col--1-of-3">      
-                
-                    <label for="english-month-selector">Month</label>  
-                    <select name="month" class="form-control" id="english-month-selector">
+                    </div>
+                    <div class="col col--1-of-3">
+
+                        <label for="english-month-selector">Month</label>
+                        <select name="month" class="form-control" id="english-month-selector">
     <option value="1"  selected="selected">January</option>
     <option value="2" >February</option>
     <option value="3" >March</option>
@@ -90,12 +89,12 @@
     <option value="12" >December</option>
 
 </select>
-                
-      
-        </div>
-        <div class="col col--1-of-3">      
-                    <label for="english-day-selector">Day</label>
-                    <select name="day" class="form-control" id="english-day-selector">
+
+
+                    </div>
+                    <div class="col col--1-of-3">
+                        <label for="english-day-selector">Day</label>
+                        <select name="day" class="form-control" id="english-day-selector">
     <option value="1"  selected="selected">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -113,28 +112,27 @@
     <option value="15">15</option>
 
 </select>
-                
-    
-    </div>
-    </div>
-     
-    
-    
-    
 
 
-</fieldset>
+                    </div>
+                </div>
 
-    </form>
-<!-- Nepali form start-->
 
-<form id="nepali-conversion-form" class="pure-form pure-form-aligned hidden">
-        <fieldset>
-        <legend>Select the dates from the form below</legend>
-       <div class="row">
-      <div class="col col--1-of-3">
-                    <label for="nepali-date-selector">Date</label>
-                    <select name="year" class="form-control" id="nepali-date-selector">
+
+
+
+            </fieldset>
+
+        </form>
+        <!-- Nepali form start-->
+
+        <form id="nepali-conversion-form" class="pure-form pure-form-aligned hidden">
+            <fieldset>
+                <legend>Select the dates from the form below</legend>
+                <div class="row">
+                    <div class="col col--1-of-3">
+                        <label for="nepali-date-selector">Date</label>
+                        <select name="year" class="form-control" id="nepali-date-selector">
    <option value="2073" >2073</option>
 <option value="2072" selected>2072</option>
 <option value="2071" >2071</option>
@@ -221,11 +219,11 @@
 </select>
 
 
-          </div>
-          <div class="col col--1-of-3">      
-                
-                    <label for="nepali-month-selector">Month</label>  
-                    <select name="month" class="form-control" id="nepali-month-selector">
+                    </div>
+                    <div class="col col--1-of-3">
+
+                        <label for="nepali-month-selector">Month</label>
+                        <select name="month" class="form-control" id="nepali-month-selector">
    
 <option value="1"  >Baisakh</option>
 <option value="2"  >Jestha</option>
@@ -242,12 +240,12 @@
 
 
 </select>
-                
-      
-        </div>
-        <div class="col col--1-of-3">      
-                    <label for="nepali-day-selector">Day</label>
-                    <select name="day" class="form-control" id="nepali-day-selector">
+
+
+                    </div>
+                    <div class="col col--1-of-3">
+                        <label for="nepali-day-selector">Day</label>
+                        <select name="day" class="form-control" id="nepali-day-selector">
     <option value="1"  >1</option>
 <option value="2"  >2</option>
 <option value="3"  >3</option>
@@ -282,24 +280,24 @@
 <option value="32"  >32</option>
 
 </select>
-                
-    
+
+
+                    </div>
+                </div>
+
+
+
+            </fieldset>
+
+        </form>
+
+        <div class="row">
+            <div class="col col--1-of-1">
+                <a class="pure-button pure-button-primary centered" id="convert-button" href="#" role="button">Convert to Nepali</a>
+            </div>
+        </div>
+
     </div>
-    </div>
- 
-
-
-</fieldset>
-
-    </form>
- 
- <div class="row">
- <div class="col col--1-of-1">  
-<a class="pure-button pure-button-primary centered" id="convert-button" href="#" role="button">Convert to Nepali</a>
-    </div>
-</div>
-
-</div>
 
 </body>
 
