@@ -17,39 +17,35 @@ jQuery(function($) {
 
 
 
-             
-            
 
-            if (Vesak.getCalenderType == "nepali"){
+            if (Vesak.getCalenderType == "nepali") {
                 $nepaliForm.removeClass('hidden')
-            }
-            else{
+            } else {
                 $englishForm.removeClass('hidden')
             }
 
             $nepaliSwitch.on('click', function() {
-                $(this).attr("checked","");
+                $(this).attr("checked", "");
                 $englishSwitch.removeAttr("checked");
-               
+
 
             });
             $englishSwitch.on('click', function() {
-                $(this).attr("checked","");
+                $(this).attr("checked", "");
                 $nepaliSwitch.removeAttr("checked")
 
             });
 
-            $convertButton.on('click', function(){
+            $convertButton.on('click', function() {
                 Vesak.convertDate(Vesak.getCalenderType())
             });
 
-            $('#switch-dates').on('change', function(){
-                if ( Vesak.getCalenderType() == 'nepali'){
+            $('#switch-dates').on('change', function() {
+                if (Vesak.getCalenderType() == 'nepali') {
                     $nepaliForm.removeClass('hidden')
                     $englishForm.addClass('hidden')
                     $convertButton.html('Convert To English')
-                } 
-                else {
+                } else {
                     $englishForm.removeClass('hidden')
                     $nepaliForm.addClass('hidden')
                     $convertButton.html('Convert To Nepali')
@@ -58,12 +54,6 @@ jQuery(function($) {
 
 
             });
-             
-
-
-        
-
-            
 
 
 
@@ -71,18 +61,17 @@ jQuery(function($) {
         },
 
         convertDate: function(ctype) {
-                    
+
             var crunch;
             var fromDate = Vesak.getVesakDate(ctype)
 
-            if (ctype == "nepali"){
+            if (ctype == "nepali") {
                 crunch = neptoeng.DateConversion(fromDate.eDay, fromDate.eMonth, fromDate.eYear);
-            }
-            else if (ctype == "english"){
+            } else if (ctype == "english") {
                 crunch = engtonep.DateConversion(fromDate.eDay, fromDate.eMonth, fromDate.eYear);
             }
 
-            
+
             const template = `${crunch.getYear()}, ${Vesak.addSuffix(crunch.getDate())} of ${nepaliMonth[parseInt(crunch.getMonth()) - 1]}`
             const templateDMY = ` (${crunch.getYear()}/${crunch.getMonth()}/${crunch.getDate()})`
             $('#converted-date')
@@ -91,11 +80,11 @@ jQuery(function($) {
                 .append('Your converted date is: ')
                 .append(template)
                 .append(templateDMY)
-                
+
 
         },
 
-        getCalenderType: function(){
+        getCalenderType: function() {
             return $("#switch-dates input[type='radio']:checked").val();
 
         },
@@ -115,23 +104,22 @@ jQuery(function($) {
 
         getVesakDate: function(calenderType) {
 
-            if (calenderType == "english"){
+            if (calenderType == "english") {
 
-            return {
-                eYear: parseInt($('#english-date-selector option:selected').val()),
-                eMonth: parseInt($('#english-month-selector option:selected').val()),
-                eDay: parseInt($('#english-day-selector option:selected').val())
+                return {
+                    eYear: parseInt($('#english-date-selector option:selected').val()),
+                    eMonth: parseInt($('#english-month-selector option:selected').val()),
+                    eDay: parseInt($('#english-day-selector option:selected').val())
 
+                }
+            } else if (calenderType == "nepali") {
+                return {
+                    eYear: parseInt($('#nepali-date-selector option:selected').val()),
+                    eMonth: parseInt($('#nepali-month-selector option:selected').val()),
+                    eDay: parseInt($('#nepali-day-selector option:selected').val())
+
+                }
             }
-        }
-        else if (calenderType == "nepali"){
-            return {
-                eYear: parseInt($('#nepali-date-selector option:selected').val()),
-                eMonth: parseInt($('#nepali-month-selector option:selected').val()),
-                eDay: parseInt($('#nepali-day-selector option:selected').val())
-
-            }
-        }
         }
     }
     Vesak.init()
