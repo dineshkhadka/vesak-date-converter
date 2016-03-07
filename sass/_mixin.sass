@@ -1,0 +1,19 @@
+mixin button-style($button-color, $text-color, $border-color: none)
+	background-color: $button-color
+	-moz-border-radius: 5px
+	-webkit-border-radius: 5px
+	border-radius: 5px
+	border: 1px
+	display: inline-block
+	cursor: pointer
+	color: $text-color
+	font-size: 17px
+	padding: 11px 40px
+	border: 1px solid $border-color
+	text-decoration: none
+	text-align: center
+	&:hover
+		background-color: lighten($button-color, 5%)
+	&:active
+		position: relative
+		top: 1px
