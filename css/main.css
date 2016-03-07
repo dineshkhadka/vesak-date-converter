@@ -9,7 +9,8 @@ select {
 .container {
   padding-left: 3.5em;
   padding-right: 3.5em;
-  margin: 25px auto; }
+  margin: 25px auto;
+  margin-bottom: 25px; }
 
 .right {
   float: right; }
