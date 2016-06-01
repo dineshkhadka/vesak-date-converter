@@ -7,305 +7,170 @@
     <title>Nepali Date Converter</title>
     <meta name="description" content="Another date converter. Because there are not enough date converters in Nepal">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
-
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/toast.min.css">
-
-
 </head>
-
 
 <body>
 
+<div class="container">
+<div id="switcher">
+    <!--<label for="switcher-to-english"> To Nepali</label>
 
+    <input type="radio" name="switcher" id="switcher-to-english" checked />
+    <label for="switcher-to-nepali"> To English</label>
+    <input type="radio" name="switcher" id="switcher-to-nepali" />
+    -->
+<label for="switcher-to-english"> To Nepali</label>
 
+    <input type="checkbox" name="switcher" id="switcher-to-english" checked />
 
-
-    <div class="container">
-
-
-
-        <h1 class="vesak-title">Vesak.js</h1>
-
-        <span class="tagline">"A date converter written in javascript" </span>
-
-        <div id="converted-date" class="invisible"> </div>
-
-        <form id="switch-dates">
-
-            <div class="row switcher-box">
-
-                <div class="col col--1-of-2">
-                    <label for="nepali-switch">To Nepali</label>
-                    <input type="radio" name="radio-switch" class="pure-radio" value="nepali" id="nepali-switch" checked="" />
-                </div>
-                <div class="col col--1-of-2">
-
-                    <label for="english-switch">To English</label>
-                    <input type="radio" name="radio-switch" class="pure-radio" value="english" id="english-switch" />
-                </div>
-
-            </div>
-        </form>
-
-
-        <form id="english-conversion-form" class="pure-form pure-form-aligned hidden ">
-            <fieldset>
-                <legend>Select the dates from the form below</legend>
-                <div class="row">
-                    <div class="col col--1-of-3">
-                        <label for="english-date-selector">Date</label>
-                        <select name="year" class="form-control" id="english-date-selector">
-    <option value="1970">1970</option>
-    <option value="1971">1971</option>
-    <option value="1972">1972</option>
-    <option value="1973">1973</option>
-    <option value="1993">1993</option>
-    <option value="2016" selected>2016</option>
-
-
+</div>
+    <form id="nepali-form">
+        <select name="year" class="year-selector">
+            <option value="2073" selected="">2073</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="1993">1993</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+        </select>
+    <select name="month" class="month-selector" size="1">
+            <option value="1"  >Baisakh</option>
+            <option value="2" selected >Jestha</option>
+            <option value="3"  >Asadh</option>
+            <option value="4"  >Shrawan</option>
+            <option value="5"  >Bhadra</option>
+            <option value="6"  >Ashwin</option>
+            <option value="7"  >Kartik</option>
+            <option value="8"  >Mangshir</option>
+            <option value="9"  >Poush</option>
+            <option value="10"  >Magh</option>
+            <option value="11"  >Falgun</option>
+            <option value="12"  >Chaitra</option>
 </select>
 
 
-                    </div>
-                    <div class="col col--1-of-3">
-
-                        <label for="english-month-selector">Month</label>
-                        <select name="month" class="form-control" id="english-month-selector">
-    <option value="1"  selected="selected">January</option>
-    <option value="2" >February</option>
-    <option value="3" >March</option>
-    <option value="4" >April</option>
-    <option value="5" >May</option>
-    <option value="6" >June</option>
-    <option value="7" >July</option>
-    <option value="8" >August</option>
-    <option value="9" >September</option>
-    <option value="10" >October</option>
-    <option value="11" >November</option>
-    <option value="12" >December</option>
-
+    <select name="day" class="day-selector" size="1">
+            <option value="1"  >1</option>
+            <option value="2"  >2</option>
+            <option value="3"  >3</option>
+            <option value="4"  >4</option>
+            <option value="5"  >5</option>
+            <option value="6"  >6</option>
+            <option value="7"  >7</option>
+            <option value="8"  >8</option>
+            <option value="9"  >9</option>
+            <option value="10"  >10</option>
+            <option value="11"  >11</option>
+            <option value="12"  >12</option>
+            <option value="13"  >13</option>
+            <option value="14"  >14</option>
+            <option value="15"  >15</option>
+            <option value="16" selected >16</option>
+            <option value="17"  >17</option>
+            <option value="18"  >18</option>
+            <option value="19"  >19</option>
+            <option value="20"  >20</option>
+            <option value="21"  >21</option>
+            <option value="22"  >22</option>
+            <option value="23"  >23</option>
+            <option value="24"  >24</option>
+            <option value="25"  >25</option>
+            <option value="26"  >26</option>
+            <option value="27"  >27</option>
+            <option value="28"  >28</option>
+            <option value="29"  >29</option>
+            <option value="30"  >30</option>
+            <option value="31"  >31</option>
+            <option value="32"  >32</option>
 </select>
 
+            <button id="to-english-button">TO English</button>
+    </form>
 
-                    </div>
-                    <div class="col col--1-of-3">
-                        <label for="english-day-selector">Day</label>
-                        <select name="day" class="form-control" id="english-day-selector">
-    <option value="1"  selected="selected">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-    <option value="14">14</option>
-    <option value="15">15</option>
+    <form id="english-form">
+        <select name="year" class="year-selector" size="1">
+            <option value="2016" selected>2016</option>
+            <option value="2015" >2015</option>
+            <option value="2014" >2014</option>
+            <option value="2013" >2013</option>
+            <option value="2012" >2012</option>
+            <option value="2011" >2011</option>
+            <option value="2010" >2010</option>
+            <option value="2009" >2009</option>
+            <option value="2008" >2008</option>
+            <option value="2007" >2007</option>
+            <option value="2006" >2006</option>
+            <option value="2005" >2005</option>
+            <option value="2004" >2004</option>
+            <option value="2003" >2003</option>
+            <option value="2002" >2002</option>
+        </select>
 
-</select>
+        <select name="month" class="month-selector" size="1">
+            <option value="1" >January</option>
+            <option value="2" >February</option>
+            <option value="3" >March</option>
+            <option value="4" >April</option>
+            <option value="5" selected>May</option>
+            <option value="6" >June</option>
+            <option value="7" >July</option>
+            <option value="8" >August</option>
+            <option value="9" >September</option>
+            <option value="10" >October</option>
+            <option value="11" >November</option>
+            <option value="12" >December</option>
+        </select>
 
-
-                    </div>
-                </div>
-
-
-
-
-
-            </fieldset>
-
-        </form>
-        <!-- Nepali form start-->
-
-        <form id="nepali-conversion-form" class="pure-form pure-form-aligned hidden">
-            <fieldset>
-                <legend>Select the dates from the form below</legend>
-                <div class="row">
-                    <div class="col col--1-of-3">
-                        <label for="nepali-date-selector">Date</label>
-                        <select name="year" class="form-control" id="nepali-date-selector">
-   <option value="2073" >2073</option>
-<option value="2072" selected>2072</option>
-<option value="2071" >2071</option>
-<option value="2070" >2070</option>
-<option value="2069" >2069</option>
-<option value="2068" >2068</option>
-<option value="2067" >2067</option>
-<option value="2066" >2066</option>
-<option value="2065" >2065</option>
-<option value="2064" >2064</option>
-<option value="2063" >2063</option>
-<option value="2062" >2062</option>
-<option value="2061" >2061</option>
-<option value="2060" >2060</option>
-<option value="2059" >2059</option>
-<option value="2058" >2058</option>
-<option value="2057" >2057</option>
-<option value="2056" >2056</option>
-<option value="2055" >2055</option>
-<option value="2054" >2054</option>
-<option value="2053" >2053</option>
-<option value="2052" >2052</option>
-<option value="2051" >2051</option>
-<option value="2050" >2050</option>
-<option value="2049" >2049</option>
-<option value="2048" >2048</option>
-<option value="2047" >2047</option>
-<option value="2046" >2046</option>
-<option value="2045" >2045</option>
-<option value="2044" >2044</option>
-<option value="2043" >2043</option>
-<option value="2042" >2042</option>
-<option value="2041" >2041</option>
-<option value="2040" >2040</option>
-<option value="2039" >2039</option>
-<option value="2038" >2038</option>
-<option value="2037" >2037</option>
-<option value="2036" >2036</option>
-<option value="2035" >2035</option>
-<option value="2034" >2034</option>
-<option value="2033" >2033</option>
-<option value="2032" >2032</option>
-<option value="2031" >2031</option>
-<option value="2030" >2030</option>
-<option value="2029" >2029</option>
-<option value="2028" >2028</option>
-<option value="2027" >2027</option>
-<option value="2026" >2026</option>
-<option value="2025" >2025</option>
-<option value="2024" >2024</option>
-<option value="2023" >2023</option>
-<option value="2022" >2022</option>
-<option value="2021" >2021</option>
-<option value="2020" >2020</option>
-<option value="2019" >2019</option>
-<option value="2018" >2018</option>
-<option value="2017" >2017</option>
-<option value="2016" >2016</option>
-<option value="2015" >2015</option>
-<option value="2014" >2014</option>
-<option value="2013" >2013</option>
-<option value="2012" >2012</option>
-<option value="2011" >2011</option>
-<option value="2010" >2010</option>
-<option value="2009" >2009</option>
-<option value="2008" >2008</option>
-<option value="2007" >2007</option>
-<option value="2006" >2006</option>
-<option value="2005" >2005</option>
-<option value="2004" >2004</option>
-<option value="2003" >2003</option>
-<option value="2002" >2002</option>
-<option value="2001" >2001</option>
-<option value="2000" >2000</option>
-<option value="1999" >1999</option>
-<option value="1998" >1998</option>
-<option value="1997" >1997</option>
-<option value="1996" >1996</option>
-<option value="1995" >1995</option>
-<option value="1994" >1994</option>
-<option value="1993" >1993</option>
-<option value="1992" >1992</option>
-
-</select>
-
-
-                    </div>
-                    <div class="col col--1-of-3">
-
-                        <label for="nepali-month-selector">Month</label>
-                        <select name="month" class="form-control" id="nepali-month-selector">
-   
-<option value="1"  >Baisakh</option>
-<option value="2"  >Jestha</option>
-<option value="3"  >Asadh</option>
-<option value="4"  >Shrawan</option>
-<option value="5"  >Bhadra</option>
-<option value="6"  >Ashwin</option>
-<option value="7"  >Kartik</option>
-<option value="8"  >Mangshir</option>
-<option value="9"  >Poush</option>
-<option value="10"  >Magh</option>
-<option value="11" selected >Falgun</option>
-<option value="12"  >Chaitra</option>
-
-
-</select>
-
-
-                    </div>
-                    <div class="col col--1-of-3">
-                        <label for="nepali-day-selector">Day</label>
-                        <select name="day" class="form-control" id="nepali-day-selector">
-    <option value="1"  >1</option>
-<option value="2"  >2</option>
-<option value="3"  >3</option>
-<option value="4"  >4</option>
-<option value="5"  >5</option>
-<option value="6"  >6</option>
-<option value="7"  >7</option>
-<option value="8"  >8</option>
-<option value="9"  >9</option>
-<option value="10"  >10</option>
-<option value="11"  >11</option>
-<option value="12"  >12</option>
-<option value="13"  >13</option>
-<option value="14"  >14</option>
-<option value="15"  >15</option>
-<option value="16" selected >16</option>
-<option value="17"  >17</option>
-<option value="18"  >18</option>
-<option value="19"  >19</option>
-<option value="20"  >20</option>
-<option value="21"  >21</option>
-<option value="22"  >22</option>
-<option value="23"  >23</option>
-<option value="24"  >24</option>
-<option value="25"  >25</option>
-<option value="26"  >26</option>
-<option value="27"  >27</option>
-<option value="28"  >28</option>
-<option value="29"  >29</option>
-<option value="30"  >30</option>
-<option value="31"  >31</option>
-<option value="32"  >32</option>
-
-</select>
-
-
-                    </div>
-                </div>
+        <select name="day" class="day-selector" size="1">
+            <option value="1" >1</option>
+            <option value="2" >2</option>
+            <option value="3" >3</option>
+            <option value="4" >4</option>
+            <option value="5" >5</option>
+            <option value="6" >6</option>
+            <option value="7" >7</option>
+            <option value="8" >8</option>
+            <option value="9" >9</option>
+            <option value="10" >10</option>
+            <option value="11" >11</option>
+            <option value="12" >12</option>
+            <option value="13" >13</option>
+            <option value="14" >14</option>
+            <option value="15" >15</option>
+            <option value="16" >16</option>
+            <option value="17" >17</option>
+            <option value="18" >18</option>
+            <option value="19" >19</option>
+            <option value="20" >20</option>
+            <option value="21" >21</option>
+            <option value="22" >22</option>
+            <option value="23" >23</option>
+            <option value="24" >24</option>
+            <option value="25" >25</option>
+            <option value="26" >26</option>
+            <option value="27" >27</option>
+            <option value="28" >28</option>
+            <option value="29" selected>29</option>
+            <option value="30" >30</option>
+            <option value="31" >31</option>
+        </select>
+        <button id="to-nepali-button">to nepali</button>
+        
+</form>
+<span id="content"></span>
+</div>
 
 
 
-            </fieldset>
-
-        </form>
-
-        <div class="row">
-            <div class="col col--1-of-1 right">
-                <a class="pure-button pure-button-primary" id="convert-button" href="#" role="button">Convert to Nepali</a>
-            </div>
-        </div>
-
-    </div>
-
-
-</body>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script type="text/javascript" src="js/date-bundle.js"></script>
-
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/date.js"></script>
+<script type="text/javascript" src="js/neptoeng.js"></script>
+<script type="text/javascript" src="js/engtonep.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-
+</body>
 </html>
