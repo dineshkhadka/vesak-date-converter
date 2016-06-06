@@ -7,12 +7,19 @@
     <title>Nepali Date Converter</title>
     <meta name="description" content="Another date converter. Because there are not enough date converters in Nepal">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
 
 <div class="container">
+
+<h1>
+    vesak.js
+</h1>
+
+
 <div id="switcher">
     <!--<label for="switcher-to-english"> To Nepali</label>
 
@@ -25,7 +32,10 @@
     <input type="checkbox" name="switcher" id="switcher-to-english" checked />
 
 </div>
+
+<div class="form-box">
     <form id="nepali-form">
+    
         <select name="year" class="year-selector">
             <option value="2073" selected="">2073</option>
             <option value="2001">2001</option>
@@ -38,14 +48,15 @@
             <option value="2008">2008</option>
             <option value="2009">2009</option>
         </select>
+       
+
+    
     <select name="month" class="month-selector" size="1">
             <option value="1"  >Baisakh</option>
             <option value="2" selected >Jestha</option>
             <option value="3"  >Asadh</option>
             <option value="4"  >Shrawan</option>
             <option value="5"  >Bhadra</option>
-            <option value="6"  >Ashwin</option>
-            <option value="7"  >Kartik</option>
             <option value="8"  >Mangshir</option>
             <option value="9"  >Poush</option>
             <option value="10"  >Magh</option>
@@ -53,8 +64,10 @@
             <option value="12"  >Chaitra</option>
 </select>
 
-
+    
     <select name="day" class="day-selector" size="1">
+            <option value="6"  >Ashwin</option>
+            <option value="7"  >Kartik</option>
             <option value="1"  >1</option>
             <option value="2"  >2</option>
             <option value="3"  >3</option>
@@ -159,11 +172,13 @@
             <option value="30" >30</option>
             <option value="31" >31</option>
         </select>
-        <button id="to-nepali-button">to nepali</button>
+        <button id="to-nepali-button">Convert</button>
         
 </form>
 <span id="content"></span>
 </div>
+</div>
+</body>
 
 
 
