@@ -1,5 +1,8 @@
 $green: #1ECD97
 $gray: #BBB
+$darkgray: darken($gray, 10%)
+$dimgreen: lighten($green, 35%)
+$radius: 8px
 
 
 *
@@ -9,8 +12,9 @@ $gray: #BBB
 html
     font-family: 'Source Sans Pro', sans-serif
     color: $gray
-    //background-color: #484
-
+a
+    text-decoration: none
+    color: $darkgray
 h1
     font-weight: 300
     font-size: 3rem
@@ -25,12 +29,38 @@ h1
     margin-bottom: 10px
 .box
     background-color: #5A90A4
+.label-date
+    color: lighten(black, 40%)
+.switch-group
+    display: flex
+    justify-content: space-around
+    width: 100%
+    text-transform: uppercase
+    font-weight: bold
+    margin-bottom: 10px
+    line-height: 2
+    a
+        color: $darkgray
+        letter-spacing: 0.50pt
+        text-decoration: none
+        border-bottom: 2px solid rgba(0,0,0,0)
+        transition: border-bottom 0.4s
+        &:hover
+            color: lighten($darkgray, 10%)
+    .active
+            border-bottom: 2px solid $green
+
+#content
+    margin-top: 5px
+    font-size: 18px
+    text-align: center
+    height: 40px    
 form
     display: none
 
 select
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA2ElEQVRIS+2TPQ7CMAyF/ZId1F4FuAI/J0BsLFwKZjZGliJOwFnSLswkOIhKVSB1EOqWSl0q931+zzZo4AcD61MGiAnniH6PqCzLJSm1VUQ7Y8xdVOCCoijG0PoA5/Z1XV+7/3zM4AUAzlx0U8BCgnhxbqhioQm/KxHg6QxZM+QoQbhu5ICLFyfnNk3TnELH0S2SICniHta7pjGIF38AlSaaxjpvnYh3EEKstUgVFx20XXQh728zqfNkB18gLlU82UEHMgdgw1XsuxVxBimHlgF/pZRnIMb3BPr5YxmYGnrEAAAAAElFTkSuQmCC) no-repeat scroll right
-    border-radius: 6px
+    border-radius: $radius
     border: 1px $green solid
     height: 50px
     width: 100%
@@ -49,10 +79,10 @@ select
 button
     outline: none
     float: right
-    height: 40px
+    height: 50px
     text-align: center
-    width: 130px
-    border-radius: 6px
+    width: 100%
+    border-radius: $radius
     background: $green
     border: 2px solid $green
     color: white
@@ -69,6 +99,14 @@ button
         background: darken($green, 20)
     &:active
         letter-spacing: 2px 
+footer
+    clear: both
+    margin-top: 100px
+    text-align: center
+    font-weight: 300
+    a:hover
+        border-bottom: 2px solid $darkgray
+
 
 @media (max-width: 400px)
     .form-box

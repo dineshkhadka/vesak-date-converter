@@ -1,20 +1,33 @@
 jQuery(function($) {
     var eMonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'september', 'October', 'November', 'December'];
     var nMonth = ['Baisakh', 'Jestha', 'Ashar', 'Shrawan', 'Bhadra', 'Ashoj', 'Kartik', 'Mangsir', 'Poush', 'Magh', 'Falgun', 'Chaitra'];
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     var Vesak = {
 
         init: function() {
-            this.changeFormState();
+            this.changeFormState('toNepali');
             this.bindEvents();
         },
 
         bindEvents: function() {
-            $('#switcher-to-english').change(function() {
-                Vesak.changeFormState();
+            $('#switcher-to-english').click(function() {
+                Vesak.changeFormState('toEnglish');
             });
-            $('button').click(function(e) {
+            $('#switcher-to-nepali').click(function() {
+                Vesak.changeFormState('toNepali');
+            });
+            $('.switch-group > a').click(function (e) {
                 e.preventDefault()
             })
+            $('button')
+                .click(function(e) {
+                    e.preventDefault()
+                })
+                .mouseup(function() {
+                    $(this).blur()
+                })
+
+
             $('#to-nepali-button').click(function() {
                 Vesak.convert('toNepali');
             })
@@ -23,15 +36,22 @@ jQuery(function($) {
             });
         },
 
-        changeFormState: function() {
-            if ($('#switcher-to-english').is(':checked')) {
+        changeFormState: function(method) {
+            if (method == 'toEnglish') {
                 $('#english-form').show();
                 $('#nepali-form').hide();
+                $('#switcher-to-english').addClass('active');
+                $('#switcher-to-nepali').removeClass('active');
+
             } else {
                 $('#nepali-form').show();
                 $('#english-form').hide();
+                $('#switcher-to-english').removeClass('active');
+                $('#switcher-to-nepali').addClass('active');
             }
+            $("#content").html('') // Empty content
         },
+
 
         convert: function(ctype) {
 
@@ -55,15 +75,15 @@ jQuery(function($) {
             }
 
             pos = +dateResult.getMonth() - 1;
-            template = `The date is ${dateResult.getDate()}th of ${monthName[pos]}, ${dateResult.getYear()}`
+            template = `Result: <span class="label-date">${days[+ dateResult.getDay() - 1]}, ${dateResult.getDate()} of ${monthName[pos]}, ${dateResult.getYear()}  </span>`
             $("#content").html(template)
             console.log(template);
         },
 
-        getVesakDate: function(d) {
+        getVesakDate: function(arg) {
             var state;
 
-            d == 'toNepali' ? state = 'english' : state = 'nepali';
+            arg == 'toNepali' ? state = 'english' : state = 'nepali';
             console.log('state:' + state);
             return {
                 year: +$('#' + state + '-form > .year-selector option:selected').val(),

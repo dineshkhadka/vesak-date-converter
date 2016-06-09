@@ -1,7 +1,9 @@
-# vesak.js
-## What is Vesak.js?
+# vesak
+***
+## What is Vesak?
+![Vesak screenshot](https://github.com/dineshkhadka/vesak-date-converter/raw/master/img/screenshot.png)
 
-Vesak.js is just another date converter that does nothing more than any other date converters. I put the `.js` to make it sound cool.
+Vesak.js is just another date converter that does nothing more than any other date converters.
 
 ## Why does it exist?
 It's a simple experiment with a client side date conversion to add something to my portfolio. Almost all converters seem to utilize the backend for this causing a slow conversion.

@@ -1,33 +1,82 @@
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html {
-  font-family: "Source Sans Pro", sans-serif;
-  color: #BBB; }
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #BBB;
+}
+
+a {
+  text-decoration: none;
+  color: #a2a2a2;
+}
 
 h1 {
   font-weight: 300;
   font-size: 3rem;
-  text-align: center; }
+  text-align: center;
+}
 
 .form-box {
   width: 480px;
-  margin: 10px auto; }
+  margin: 10px auto;
+}
 
 .inbox {
   background-color: #252424;
   height: 30px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
 .box {
-  background-color: #5A90A4; }
+  background-color: #5A90A4;
+}
+
+.label-date {
+  color: #666666;
+}
+
+.switch-group {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 2;
+}
+
+.switch-group a {
+  color: #a2a2a2;
+  letter-spacing: 0.50pt;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.4s;
+}
+
+.switch-group a:hover {
+  color: #bbbbbb;
+}
+
+.switch-group .active {
+  border-bottom: 2px solid #1ECD97;
+}
+
+#content {
+  margin-top: 5px;
+  font-size: 18px;
+  text-align: center;
+  height: 40px;
+}
 
 form {
-  display: none; }
+  display: none;
+}
 
 select {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA2ElEQVRIS+2TPQ7CMAyF/ZId1F4FuAI/J0BsLFwKZjZGliJOwFnSLswkOIhKVSB1EOqWSl0q931+zzZo4AcD61MGiAnniH6PqCzLJSm1VUQ7Y8xdVOCCoijG0PoA5/Z1XV+7/3zM4AUAzlx0U8BCgnhxbqhioQm/KxHg6QxZM+QoQbhu5ICLFyfnNk3TnELH0S2SICniHta7pjGIF38AlSaaxjpvnYh3EEKstUgVFx20XXQh728zqfNkB18gLlU82UEHMgdgw1XsuxVxBimHlgF/pZRnIMb3BPr5YxmYGnrEAAAAAElFTkSuQmCC) no-repeat scroll right;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px #1ECD97 solid;
   height: 50px;
   width: 100%;
@@ -36,21 +85,25 @@ select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  outline: none; }
-  select:focus {
-    border-color: #117455;
-    -webkit-transition: all 0.25s ease;
-            transition: all 0.25s ease; }
-  select:hover {
-    border-color: #117455; }
+  outline: none;
+}
+
+select:focus {
+  border-color: #117455;
+  transition: all 0.25s ease;
+}
+
+select:hover {
+  border-color: #117455;
+}
 
 button {
   outline: none;
   float: right;
-  height: 40px;
+  height: 50px;
   text-align: center;
-  width: 130px;
-  border-radius: 6px;
+  width: 100%;
+  border-radius: 8px;
   background: #1ECD97;
   border: 2px solid #1ECD97;
   color: white;
@@ -59,18 +112,35 @@ button {
   size: 12px;
   weight: bold;
   cursor: pointer;
-  -webkit-transition: all 0.25s ease;
-          transition: all 0.25s ease; }
-  button:hover {
-    color: white;
-    background: #117455; }
-  button:focus {
-    background: #117455; }
-  button:active {
-    letter-spacing: 2px; }
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  color: white;
+  background: #117455;
+}
+
+button:focus {
+  background: #117455;
+}
+
+button:active {
+  letter-spacing: 2px;
+}
+
+footer {
+  clear: both;
+  margin-top: 100px;
+  text-align: center;
+  font-weight: 300;
+}
+
+footer a:hover {
+  border-bottom: 2px solid #a2a2a2;
+}
 
 @media (max-width: 400px) {
   .form-box {
-    width: 100%; } }
-
-/*# sourceMappingURL=main.css.map */
+    width: 100%;
+  }
+}
